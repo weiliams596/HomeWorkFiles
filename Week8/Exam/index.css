@@ -1,0 +1,67 @@
+/* This is the CSS code for the index.html file */
+
+.rotateAndBigger{
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    border:2px solid black;
+}
+
+.rotateAndBigger:hover{
+    transform: rotate(180deg);
+    width: 400px;
+    height: 400px;
+    background-color: thistle;
+    transition-duration: 1s;
+    transition-timing-function: reverse;
+}
+
+.ballBorderDiv{
+    border: 1px solid palevioletred;
+    width: 400px;
+    height: 100px;
+}
+
+.ballBox{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    animation-name: ballMoveAnimation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.looper{
+    width: 200px;
+    height:200px;
+    border:20px solid rgb(209, 202, 202);
+    border-radius: 50%;
+    border-right-color: blue;
+    animation: loopAnimation 2s linear infinite;
+}
+
+
+@keyframes ballMoveAnimation {
+    0%{
+
+    }
+    50%{
+        transform: translate(300%);
+    }
+    100%{
+        transform: translate(0%);
+    }
+}
+
+@keyframes loopAnimation {
+    0%{
+        transform: rotate(0deg);
+    }    
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
