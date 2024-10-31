@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+}
+
+body{
+    height: 2000px;
+}
+
+.green{
+    background-color: green;
+    width: 150px;
+    height: 150px;
+    border: 1px solid yellow;
+    position: relative;
+}
+
+.green:hover .red{
+    top:0;
+    left:0;
+}
+
+.red{
+    background-color: red;
+    width: 150px;
+    height: 150px;
+    border: 1px solid gray;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.right-bottom-fixed{
+    position: fixed;
+    top: 0;
+    background-color: blue;
+    width: 100%;
+    text-align: center;
+}
+
+.sticky-top{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    position: sticky;
+    top: 35px;
+    z-index: 1;
+}
+
+
+.sticky-top2{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    position: sticky;
+    top: 35px;
+    z-index: 2;
+}

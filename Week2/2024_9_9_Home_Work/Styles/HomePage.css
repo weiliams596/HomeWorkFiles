@@ -1,0 +1,164 @@
+:root{
+    --color-button-background: blue;
+    --color-button-text: white;
+    --color-on-mouse-move:darkblue;
+}
+
+.home-body{
+    background-color: aqua;    
+}
+
+.display-none{
+    display: none;
+}
+
+.flex-container{
+    display: flex;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.row{
+    flex-direction: row;
+}
+
+.position-relative{
+    position: relative;
+}
+
+.position-absolute{
+    position: absolute;
+}
+
+.center{
+    justify-content: center;
+    align-items: center;
+}
+
+.align-left{
+    justify-content: flex-start;
+    left: 0;
+}
+
+.align-right{
+    justify-content:flex-end;
+    right:0;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.justify-left{
+    justify-content: flex-start;
+}
+
+.justify-right{
+    justify-content: flex-end;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.radius{
+    border-radius: 50%;
+}
+
+.radius-small{
+    border-radius: 5px;
+}
+
+.radius-large{
+    border-radius: 20px;
+}
+
+.shadow{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button{
+    background-color: var(--color-button-background);
+    color: var(--color-button-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: var(--color-on-mouse-move);
+}
+
+.button-small{
+    font-size: 14px;
+}
+
+.button-large{
+    font-size: 18px;
+}
+
+.button-disabled{
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.shadow{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.color-red{
+    color: red;
+}
+
+.color-green{
+    color: green;
+}
+
+li{
+    list-style-type:none;
+}
+
+
+/* dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--color-button-background);
+    /* min-width: 100%; */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* show the dropdown menu when the user clicks on the dropdown button */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* dropdown menu links */
+.dropdown-menu li {
+    list-style-type: none;
+}
+
+.dropdown-menu li a {
+    color: var(--color-button-text);
+    /* padding: 12px 16px; */
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--color-on-mouse-move);
+}
+
+/* dropdown menu */

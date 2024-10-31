@@ -1,0 +1,21 @@
+:root{
+    --home-page-body-bg-color: #91e9f1;
+    --heading-color: #74d850;
+}
+
+.home-page-body{
+    background-color: var(--home-page-body-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{    
+    font-family:fantasy;
+    color: var(--heading-color);
+}
+
+starts{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+}

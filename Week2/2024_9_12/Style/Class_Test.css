@@ -1,0 +1,37 @@
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: rgb(239, 185, 239);
+}
+
+a:hover {
+    color: rgb(163, 155, 81);
+}
+
+a:active {
+    color: rgb(187, 237, 113);
+}
+
+a:focus{
+    color: aqua;
+}
+
+.text-input:focus{
+    background-color: aqua;
+}
+
+.container{
+    border: 2px solid rgb(233, 22, 22);
+    border-style: solid;
+    box-shadow: -3px -3px 8px rgba(0, 0, 0, 0.5) inset;
+    border-radius: 20px;
+}
+
+.img-box{
+    display: flex;
+    width: 100px;
+    height: 200px;
+    object-fit: cover;
+}

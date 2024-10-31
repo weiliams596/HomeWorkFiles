@@ -1,0 +1,29 @@
+.box-parent{
+    display: flex;
+    width: 1000px;
+    height: 650px;
+    margin: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 2px dashed black;
+    justify-content: space-between;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.item{
+    width: 300px;
+    height: 300px;
+}
+
+.first{
+    background-color: red;
+}
+
+.second{
+    background-color: green;
+}
+
+.third{
+    background-color: blue;
+}

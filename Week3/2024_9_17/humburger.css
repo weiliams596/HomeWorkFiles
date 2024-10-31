@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body{
+    font-family: Nunito Sans;
+}
+
+.burger{
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border-width: 4px;
+    border-style: dashed;
+    border-color:chocolate;
+    box-shadow: 10px 10px 0px 10px rgba(195, 237, 97, 0.3);
+}
+
+.button_submit{
+    background-color: chocolate;
+    border-radius: 22px;
+    text-decoration: none;
+    color: white;
+}

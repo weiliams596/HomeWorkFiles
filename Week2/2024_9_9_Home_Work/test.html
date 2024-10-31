@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单示例</title>
+    <style>
+        /* 隐藏下拉菜单 */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* 显示下拉菜单 */
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        /* 下拉菜单项样式 */
+        .dropdown-menu li {
+            list-style-type: none;
+        }
+
+        .dropdown-menu li a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropdown-toggle">选择一个选项</button>
+        <ul class="dropdown-menu">
+            <li><a href="test.html?page=1">选项 1</a></li>
+            <li><a href="test.html?page=2">选项 2</a></li>
+            <li><a href="test.html?page=3">选项 3</a></li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            dropdownToggle.addEventListener('click', function() {
+                dropdownMenu.classList.toggle('show');
+            });
+
+            // 点击页面其他地方时隐藏下拉菜单
+            window.addEventListener('click', function(event) {
+                if (!event.target.matches('.dropdown-toggle')) {
+                    if (dropdownMenu.classList.contains('show')) {
+                        dropdownMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

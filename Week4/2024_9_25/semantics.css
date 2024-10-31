@@ -1,0 +1,43 @@
+body{
+    height: 2000px;
+}
+
+.big-div {
+    border: 2px dashed brown;
+    width: 650px;
+    height: 200px;
+    display: flex;
+    position: relative;
+}
+
+.item1,
+.item2,
+.item3 {
+    width: 220px;
+    height: 195px;
+    border: 2px solid green;
+}
+
+.item1{
+    background-color: cadetblue;
+    position:fixed;
+}
+
+.item2{
+    background-color: darkcyan;
+    position:relative;
+    top: 20px;
+    left: 50px;
+}
+
+.item3{
+    background-color: darkmagenta;
+    position:absolute;
+    left: 70px;
+    bottom: 50px;
+}
+
+.small-p{
+    position: sticky;
+    top: 10px;
+}

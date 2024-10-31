@@ -1,0 +1,39 @@
+
+body{
+    background-color: aqua;
+}
+
+h1{
+    text-align: center;
+}
+
+.form_container{
+    margin-left: 35%;
+    margin-top: 35%;
+    background-color:white;
+    width: 200px;
+    padding: 20px;
+}
+
+input,textarea{
+    margin-top:20px;
+}
+
+button{
+    margin-top:30px;
+    margin-left: 30%;
+    background-color: #add8e6;
+    border-radius: 10px;
+    border: none;
+    padding:10px 15px;
+    font-size:22px;
+    color:white;
+}
+
+input:hover,textarea:hover{
+    background-color: antiquewhite;
+}
+
+button:hover{
+    background-color:#4397b3;
+}

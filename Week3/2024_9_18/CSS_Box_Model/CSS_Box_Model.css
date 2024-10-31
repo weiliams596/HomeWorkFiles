@@ -1,0 +1,29 @@
+h1 {
+    border: 6px dashed red;
+    padding: 10px 20px;
+    margin: 30px;
+}
+
+p {
+    border: 1px solid blue;
+}
+
+span {
+    border: 2px solid green;
+}
+
+.center_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    background-color: gray;
+    border-radius: 50%;
+    border:2px dashed black;
+}
+
+.center_p{
+    border:none;
+    
+}

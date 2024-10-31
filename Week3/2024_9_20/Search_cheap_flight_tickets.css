@@ -1,0 +1,46 @@
+body{
+    background-color: aqua;
+}
+
+.title1{
+    text-align: center;
+}
+
+.one_line_form{
+    background-color: aqua;
+    margin-left: 50px;
+
+}
+
+input{
+    width: 250px;
+    border: none;
+    padding:20px;
+}
+/* 
+label{
+    background-color: white;
+    padding:20px;
+} */
+
+select{
+    padding: 20px;
+    border:none;
+}
+
+button{
+    padding:20px 40px ;
+    border:none;
+    background-color:chocolate;
+    border-radius: 20px;
+}
+
+.form_input1{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.form_select{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}

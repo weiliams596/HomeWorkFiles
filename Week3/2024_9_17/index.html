@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        function rangChange(){
+            let range = document.getElementById("range");
+            let label = document.querySelector("label[for='range']");
+            label.textContent = range.value;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <label for="name">Name:</label><br>
+        <input type="text" placeholder="Enter your name" id="name" name="name" pattern="[A-Za-z0-9]{3,10}"><br><br><label for="tel">Phone Number:</label><br>
+        <input type="tel" name="tel" id="tel" placeholder="Enter your phone number" pattern="[+][0-9]{11}"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" placeholder="Enter your email" id="email" name="email"><br><br>
+        <!-- <label for="password">Password:</label><br>
+        <input type="password" placeholder="Enter your password" id="password" name="password"><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="3" max="100" step="1"><br><br>
+        <input type="date" ><br>
+        <input type="color"><br>
+        <input type="range" id="range" name="range" min="0" max="100" onmousedown="rangChange()">
+        <label for="range">0</label>
+        <textarea name="message" id=""></textarea>
+        <br> -->
+        <label for="enum">Choose an option:</label>
+        <select name="enum" id="" title="Choose an option">
+            <option value="1">Big</option>
+            <option value="2">Normal</option>
+            <option value="3">Small</option>
+        </select>
+        <br>
+
+        <!-- <div>
+            <input type="checkbox" id="blue" name="only_two" class="radius_checkbox" required>
+            <label for="blue">blue</label>
+            <input type="checkbox" id="red" name="only_two" class="radius_checkbox" required>
+            <label for="red">red</label>
+            <input type="checkbox" id="yellow" name="only_two" class="radius_checkbox" required>
+            <label for="yellow">yellow</label>
+        </div>
+        <div>
+            <input type="radio" id="blue" name="only_one" class="radius_checkbox">
+            <label for="blue">blue</label>
+            <input type="radio" id="red" name="only_one" class="radius_checkbox">
+            <label for="red">red</label>
+            <input type="radio" id="yellow" name="only_one" class="radius_checkbox">
+            <label for="yellow">yellow</label>
+        </div>
+        <input type="file" title="Choose a file" id="file" name="file"> -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

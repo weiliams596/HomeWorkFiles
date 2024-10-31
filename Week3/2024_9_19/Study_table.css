@@ -1,0 +1,16 @@
+table,th,td{
+    border-radius: 10px;
+    background-color: purple;
+}
+
+.table1{    
+    margin-bottom: 20px;
+}
+
+th{
+    background-color:aqua;
+}
+
+td{
+    background-color: yellow;
+}
