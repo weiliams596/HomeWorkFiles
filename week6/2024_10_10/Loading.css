@@ -1,0 +1,78 @@
+.borders{
+    border: 1px solid red;
+    width: 600px;
+    height: 60px;
+    border-radius: 68px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: aqua;
+    border-radius: 68px;
+    animation-name: loadAnimation;
+    animation-duration:6s;
+    animation-iteration-count: infinite;
+}
+
+.borders2{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.loader2{
+    width: 15%;
+    height: 98%;
+    background-color: aqua;
+    border-radius: 28px;
+}
+
+.borders2:hover .loader2{
+    width: 100%;
+    background-color: brown;
+    transition: width 6.5s linear;
+    /* transition-timing-function: calc(6s * 0.5); */
+}
+
+.borders2 p{
+    left:0;
+}
+
+.borders2:hover p{
+    left:80%;
+    transition: left 6.5s linear;
+    
+}
+
+.borders2 p{
+    position: absolute;
+    left: 10px;
+}
+
+@keyframes loadAnimation {
+    0%{
+        width: 15%;
+    }
+    25%{
+        width: 25%;
+        background-color: burlywood;
+    } 
+    50%{
+        width: 50%;
+        background-color: darkgreen;
+    } 
+    75%{
+       width: 75%;
+       background-color:blue;
+    } 
+    100%{
+        width: 100%;
+        background-color: palevioletred;
+    }
+
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="title">
+                Amjilt Cyber School
+            </div>
+            <div class="timer-div">
+                <div class="timers">
+                    7 Қазан, 2024
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="content-section">
+            <div class="content-mean">
+                <p>Amjilt Cyber School – еҢ алғашқы қазақ тілінде білім беретін IT мектебі! Біздің оқу бағдарламамыз
+                    full-stack web-программисттерді дайындауға арналған. Оқу барысында сіздер бағдарламалау дағдыларын
+                    меңгеріп, UI/UX дизайны мен ағылшын тілін йренесіздер. <br>
+                    Біздің мақсатымыз – заманауи технологияларды терең түсінетін, шығармашылықпен ойлайтын және бөсекеге
+                    қабілетті мамандарды даярлау. <br>
+                    Сіздерді келешектіқ IT әлеміне қош келдіңіздер!</p>
+            </div>
+            <div class="image-div">
+                <img src="https://code-institute-org.github.io/Full-Stack-Web-Developer-Stream-0/assets/html5-css3.png"
+                    alt="">
+                <img src="https://static.vecteezy.com/system/resources/previews/027/127/463/original/javascript-logo-javascript-icon-transparent-free-png.png"
+                    alt="">
+                <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" alt="">
+                <img src="                https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png"
+                    alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/993px-Postgresql_elephant.svg.png"
+                    alt="">
+                <img src="https://cdn-icons-png.flaticon.com/512/1377/1377975.png" alt="">
+                <img src="https://logodownload.org/wp-content/uploads/2019/10/adobe-photoshop-logo-0.png" alt="">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="">
+            </div>
+        </section>
+        <section class="grid-and-form-section">
+            <div class="grid-section">
+                <table border="1">
+                    <tr class="first-row">
+                        <th>№</th>
+                        <th>Уақыт</th>
+                        <th>Топ</th>
+                        <th>Сабақ</th>
+                        <th>Мұғалім</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr class="second-row">
+                        <td>1</td>
+                        <td>9:00</td>
+                        <td>Q-IT-24-1</td>
+                        <td>HTML&CSS</td>
+                        <td>Темірлан</td>
+                        <td>313</td>
+                    </tr>
+                    <tr class="third-row">
+                        <td>2</td>
+                        <td>9:00</td>
+                        <td>Q-IT-24-2</td>
+                        <td>HTML&CSS</td>
+                        <td>Ғалымбек</td>
+                        <td>307</td>
+                    </tr>
+                    <tr class="fourth-row">
+                        <td>3</td>
+                        <td>10:00</td>
+                        <td>Q-IT-24-3</td>
+                        <td>Ағылшын</td>
+                        <td>Дильназ</td>
+                        <td>305</td>
+                    </tr>
+                    <tr class="fivth-row">
+                        <td>4</td>
+                        <td>11:00</td>
+                        <td>Q-IT-24-1</td>
+                        <td>Ағылшын</td>
+                        <td>Дильназ</td>
+                        <td>305</td>
+                    </tr>
+                    <tr class="sixth-row">
+                        <td>5</td>
+                        <td>11:00</td>
+                        <td>Q-IT-24-2</td>
+                        <td>Ағылшын</td>
+                        <td>Аружан</td>
+                        <td>307</td>
+                    </tr>
+                    <tr class="seventh-row">
+                        <td>6</td>
+                        <td>11:00</td>
+                        <td>Q-IT-24-3</td>
+                        <td>HTML&CSS</td>
+                        <td>Темірлан</td>
+                        <td>313</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="form-section">
+                <form>
+                    <label for="name">Толық аты-жөніңіз:</label>
+                    <input type="text" id="name" name="name" pattern="[A-Za-zА-Яа-я]{3,26}" required>
+                    <label for="email">Электрондық поштаңыз:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Телефон нөмеріңіз:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[+0-9]{12}" required>
+                    <label for="selections">Оқу тобын таңдаңыз:</label>
+                    <div class="select-div">
+                        <input type="radio" id="selections" checked name="selections" value="Q-IT-24-1"
+                            required>Q-IT-24-1
+                        <input type="radio" id="selections" name="selections" value="Q-IT-24-2" required>Q-IT-24-2
+                        <input type="radio" id="selections" name="selections" value="Q-IT-24-3" required>Q-IT-24-3
+                    </div>
+                    <label for="message">Қосымша қалауларыңыз:</label>
+                    <textarea id="message" name="message" rows="3" required></textarea>
+                    <div class="submit-div">
+                        <button>Жіберу</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="movie-section">
+            <div class="movie-div">
+                <video src="">
+                    <source src="https://www.youtube.com/watch?v=8KaJRw-rfn8" type="video/mp4">
+                </video>
+            </div>
+        </section>
+    </main>
+    <footer>
+        Amjilt Cyber School © 2024
+    </footer>
+</body>
+
+</html>

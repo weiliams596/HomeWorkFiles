@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --back-ground-color:rgb(65, 237, 65);
+}
+
+.box{
+    width: 80%;
+    height: 360px;
+    background-color: var(--back-ground-color);
+    margin-bottom: 20px;   
+}
+
+p{
+    width: 100%;
+    background-color: var(--back-ground-color);
+    margin-bottom: 20px;
+}
+
+.grid{
+    display: flex;
+    justify-content: space-between;
+    border: 2px dashed blue;
+}
+
+.grid-item{
+    width: calc(25%-25px);
+    border: 2px dashed red;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+@media screen and (max-width: 768px) {
+    .box{
+        width: min(50%,25px);
+    }
+}
