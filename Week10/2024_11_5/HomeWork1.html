@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жатақхана алу талаптары бойынша тексеру</title>
+</head>
+
+<body>
+    <h1>Жатақхана алу талаптары бойынша тексеру</h1>
+    <script>
+        let course = +prompt("курс нөмірі (1, 2, 3 немесе 4) :");
+        //  let course = prompt("курс нөмірі (1, 2, 3 немесе 4) :") - 0;
+        //  let course = prompt("курс нөмірі (1, 2, 3 немесе 4) :") * 1;
+        //  let course = prompt("курс нөмірі (1, 2, 3 немесе 4) :") / 1;
+        //  let course = Number(prompt("курс нөмірі (1, 2, 3 немесе 4) :"));
+        let isAlmaty = prompt("Келген жеріңіз Алматы ма?(Ия/Жоқ)");
+        let retValue = 'жатақханадан орын ';
+        if (course < 3 && (isAlmaty == "Жоқ" || isAlmaty == "жоқ")) {
+            retValue += "беріледі";
+        }
+        else {
+            retValue += "берілмейді ";
+        }
+        alert(retValue);
+    </script>
+</body>
+
+</html>
