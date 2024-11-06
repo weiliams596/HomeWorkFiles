@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let burger = prompt("Бургер түрін:Бүргер/Гамбүргер/Двойной Чизбүргер");
+        let price = 0;
+        if (burger.toLowerCase() == "бүргер") {
+            price = 1090;
+        } else if (burger.toLowerCase() == "гамбүргер") {
+            price = 1190;
+        }
+        else if (burger.toLowerCase() == "двойной Чизбүргер") {
+            price = 1490;
+        }
+        else {
+            alert("Сіз қате жаздыңыз!");
+        }
+        alert("Сіздің заказыңыз қабылданды!\n" +
+            "Бургер түрін: " + burger + "\n" +
+            "Суммасы: " + price + " тг"
+        );
+    </script>
+</body>
+
+</html>
