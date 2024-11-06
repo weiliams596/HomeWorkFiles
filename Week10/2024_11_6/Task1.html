@@ -10,15 +10,30 @@
 <body>
     <h1>Тапсырма</h1>
     <script>
+        //  First solution
+        // let inputStr = prompt("0 ден 99 гедейынгы санды еңгызтңыз:");
+        // if (inputStr <100 &&inputStr >=0) {
+        //     if(inputStr.length == 1){
+        //         alert("Бірінші сан:" + inputStr)
+        //     }else
+        //     alert("Бірінші сан:" + inputStr[0] + "\nЕкінші сан:" + inputStr[1]);
+        // }
+        // else {
+        //     alert("Қате еңгізіңіз!")
+        // }
+
+        //  Second solution
         let inputStr = prompt("0 ден 99 гедейынгы санды еңгызтңыз:");
-        if (inputStr <100 &&inputStr >=0) {
-            if(inputStr.length == 1){
-                alert("Бірінші сан:" + inputStr)
-            }else
-            alert("Бірінші сан:" + inputStr[0] + "\nЕкінші сан:" + inputStr[1]);
+        if (inputStr < 100 && inputStr >= 0) {
+            if (inputStr < 10) {
+                alert("Бірінші сан:" + inputStr);
+            }
+            else {
+                alert("Бірінші сан:" + parseInt(inputStr /10) + "\nЕкінші сан:" + (inputStr % 10));
+            }
         }
         else {
-            alert("Қате еңгізіңіз!")
+            alert("Қате еңгізіңіз!");
         }
     </script>
 </body>
