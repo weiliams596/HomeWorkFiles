@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let option = prompt("1 ден 3 кейін сан таңдаңыз:");
+
+        // switch(option) {
+        //     case "1":
+        //         alert("Сіз 1 санын таңдадыңыз!");
+        //         break;
+        //     case "2":
+        //         alert("Сіз 2 санын таңдадыңыз!");
+        //         break;
+        //     case "3":
+        //         alert("Сіз 3 санын таңдадыңыз!");
+        //         break;
+        //     default:
+        //         alert("Қате тердіңіз!");
+        // }
+
+        // let option = prompt("Таңдаңыз: кофе, шай, су").toLowerCase();
+
+        // switch(option) {
+        //     case "кофе":
+        //         alert("Сіз кофе таңдадыңыз!");
+        //         break;
+        //     case "шай":
+        //         alert("Сіз шай таңдадыңыз!");
+        //         break;
+        //     case "су":
+        //         alert("Сіз су таңдадыңыз!");
+        //         break;
+        //     default:
+        //         alert("Қате тердіңіз!");
+        //         break;
+        // }
+
+        let option = prompt("Бургер түрін:Бүргер/Гамбүргер/Двойной Чизбүргер").toLowerCase();
+        let count = +prompt("Сіздің бургеріңіздерін санын:");
+        let price = 0;
+        if (count < 0) {
+            alert("Сіз санын еңгізбедіңіз!");
+            return;
+        }
+        switch (option) {
+            case "бүргер":
+                price = 1090 * count;
+                break;
+            case "гамбүргер":
+                price = 1290 * count;
+                break;
+            case "двойной чизбүргер":
+                price = 1490 * count;
+                break;
+            default:
+                alert("Қате жаздыңыз!");
+                break;
+        }
+
+        alert("Сіздің заказыңыз қабылданды!\n" +
+            "Бургер түрін:" + option + "\n" +
+            "Саны: " + count + "\n" +
+            "Суммасы: " + price + " тг"
+        );
+    </script>
+</body>
+
+</html>
