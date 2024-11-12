@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let maxNumb = +prompt("Enter the maximum number:");
+        // let alertStr = "";
+        // for (let i = 0; i <= maxNumb; i += 15) {
+        //     if (i % 2) {
+        //         alertStr += "Supported number: ";
+        //     }
+        // }
+        // alert(alertStr);
+
+        // let maxNumb = +prompt("Enter the maximum number:");
+        // let alertStr ="";
+        // if(maxNumb>-1){
+        //     for(let i=0;i<=maxNumb;i++){
+        //         if(!(i%3) && !(i%5))
+        //             if(i%2){
+        //                alertStr+="Supported number: " + i;
+        //              }
+        //     }
+        // }
+        // else{
+        //     alertStr="Invalid input";
+        // }
+        // alert(alertStr);
+
+        // let maxNumb = +prompt("Enter the maximum number:");
+        // let alertStr = "";
+        // if (maxNumb > -1) {
+        //     for (let i = 0; i <= maxNumb; i++) {
+        //         if ((i % 3) == 0 && (i % 5) == 0) {
+        //             if (i % 2) {
+        //                 alertStr+="Supported number: " + i;
+        //             }
+        //         }
+        //     }
+        // }
+        // else{
+        //     alertStr="Invalid input";
+        // }
+        // alert(alertStr);
+
+
+        let maxNumb = +prompt("Enter the maximum number:");
+        let alertStr = "";
+        if(maxNumb)
+        if (maxNumb > -1) {
+            for (let i = 0; i <= maxNumb; i++) {
+                if (!(i % 3) && !(i % 5)) {
+                    if (!(i % 2)) {
+                        continue;
+                    }
+                    alertStr += "Supported number: " + i+'\n';
+                }
+            }
+            alert(alertStr);
+        }
+        else{
+            alertStr="Invalid input";
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let number = prompt("Enter a number:")
+        if (number.length == 1)
+            alert("The number is a single digit")
+        else if (number[0] == number[number.length - 1]) {
+            alert("The number is a palindrome")
+        } else {
+            alert("The number is not a palindrome")
+        }
+    </script>
+</body>
+
+</html>
