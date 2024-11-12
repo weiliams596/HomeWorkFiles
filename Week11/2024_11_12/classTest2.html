@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let customNumber= +prompt("Enter a number between 1 and 10: ");
+        let alertTable ='';
+        if(customNumber>=1 && customNumber<=10){
+            alert("You entered: "+customNumber);
+            for(let i=1;i<=10;i++){
+                alertTable+="multiplying " + customNumber + " with " + i + " is " + (customNumber*i) + '\n';
+            }
+        }else{
+            alert("Invalid input! Please enter a number between 1 and 10.");
+        }
+        alert(alertTable)
+    </script>    
+</body>
+</html>
