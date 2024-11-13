@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let sutdentCount = 0;
+        while (true) {
+            sutdentCount = +prompt("Enter the student count:");
+            if (isNaN(sutdentCount) || sutdentCount <= 0) {
+                alert("Please enter a positive number.");
+            }
+            else {
+                break;
+            }
+        }
+
+        let index = 0;
+        let sum = 0;
+        let marks = 0;
+        while (index < sutdentCount) {
+            while (true) {
+                marks = +prompt("Enter the marks of student " + (index + 1) + ":");
+                if (isNaN(marks) || marks < 0 || marks > 100) {
+                    alert("Please enter a number between 0 and 100.");
+                }
+                else{
+                    sum += marks;
+                    break;
+                }
+            }
+            index++;
+        }
+        alert("The student marks of average :" + (sum / sutdentCount).toFixed(2));
+    </script>
+</body>
+
+</html>
