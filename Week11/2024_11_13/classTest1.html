@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let startNumber;
+        let endNumber;
+        while (true) {
+            startNumber = +prompt("Enter the start number:");
+            if(isNaN(startNumber)||startNumber==null|| startNumber<0){
+                alert("Please enter a positive number");                
+            }
+            else{
+                break;
+            }
+        }
+        while (true) {
+            endNumber = +prompt("Enter the end number:");
+            if(isNaN(endNumber)||endNumber==null|| endNumber<startNumber){
+                alert("Please enter a positive number");
+            }
+            else{
+                break;
+            }
+        }
+        let index=startNumber;
+        let bIsCanLoop=true;
+        let temptStr='';
+        if(startNumber<11){
+            if(endNumber>10){
+                index=11;
+                bIsCanLoop=true;
+            }
+            else{
+                bIsCanLoop=false;
+            }
+        }
+        while (index<=endNumber && bIsCanLoop) {
+            temptStr=index.toString();
+            if(temptStr[0]==temptStr[temptStr.length-1]){
+                console.log(index);
+            }
+            index++;
+        }
+
+    </script>
+</body>
+
+</html>
