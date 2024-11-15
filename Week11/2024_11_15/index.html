@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home work</title>
+</head>
+
+<body>
+    <script>
+        let inputNumber
+        while (true) {
+            inputNumber = +prompt("Enter a number:");
+            if (inputNumber === null || inputNumber === undefined || isNaN(inputNumber)) {
+                alert("Invalid input! Please enter a valid number.");
+            }
+            else if ((inputNumber >= 0 && inputNumber < 5) || (inputNumber > -5 && inputNumber < 0)) {
+                alert("Invalid input! Please enter a valid number.");
+            } else {
+                break;
+            }
+        }
+        let minNumber = 0;
+        let maxNumber = 0;
+        let iterater = 5;
+        if (inputNumber < 0) {
+            iterater = -5;
+            for (let index = iterater; index >= inputNumber; index += iterater) {
+                maxNumber += iterater;
+            }
+            if (maxNumber < 0) {
+                minNumber = iterater;
+            }
+        } else {
+            for (let index = iterater; index <= inputNumber; index += iterater) {
+                maxNumber += iterater;
+            }
+            if (maxNumber > 0) {
+                minNumber = iterater;
+            }
+        }
+        alert("The smallest multiple of 5 that is greater than or equal to " + inputNumber + " is " + maxNumber);
+        alert("The largest multiple of 5 that is less than or equal to " + inputNumber + " is " + minNumber);
+    </script>
+</body>
+
+</html>
