@@ -1,9 +1,10 @@
 function Adult() {
     while (true) {
-        if (prompt("Enter your age:")>17){
+        let tempt =prompt("Enter your age:");
+        if (tempt>17){
             alert("You are adult!");
             break;
-        }else if(prompt("Enter your age:")<17){
+        }else if(tempt<18){
             alert("You are not adult!");
             break;
         }
