@@ -34,3 +34,13 @@ let oMemberOfTheFootballTeam = {
     }
 }
 
+let showHowToUse = function(){
+    console.log("To add a goal to the member of the football team, use the following code:");
+    console.log("oMemberOfTheFootballTeam.goal_add(1);");
+    console.log("To show the details of the member of the football team, use the following code:");
+    console.log("oMemberOfTheFootballTeam.show_details();");
+    console.log("To get the name of the member of the football team, use the following code:");
+    console.log("oMemberOfTheFootballTeam.get_member_name();");
+}
+
+showHowToUse();
