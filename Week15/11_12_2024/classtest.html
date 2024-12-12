@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.12.2024 Class test</title>
+    <style>
+        #heart-div {
+            display: flex;
+            position: relative;
+            width: 20px;
+            height: 20px;
+        }
+
+        #top-right-mark {
+            display: flex;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            border-radius: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="title">Mouse event</h1>
+    <button id="button" onclick="handleClick(event)">Click me</button>
+
+    <div id="box" style="width: 200px; height: 200px;border: 1px solid black;">
+
+    </div>
+    <div id="heart-div">
+        <img id="heart" src="heart.svg" alt="heart">
+        <mark id="top-right-mark">0</mark>
+    </div>
+    <script src="JS/classtest.js"></script>
+</body>
+</html>
