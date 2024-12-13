@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.12.2024 Homework</title>
+    <link rel="stylesheet" href="Style/homework.css">
+</head>
+
+<body>
+    <h1>13.12.2024 Homework</h1>
+    <form class="ACS_form">
+        <label for="class_type">Тобіңіз:</label>
+        <select name="class_type" id="class_type">
+            <option value="">
+                <div class="option_div">Талдаңыз</div>
+            </option>
+            <option value="24/2">
+                <div class="option_div">24/2</div>
+            </option>
+            <option value="24/4">
+                <div class="option_div">24/4</div>
+            </option>
+            <option value="24/6">
+                <div class="option_div">24/6</div>
+            </option>
+            <option value="24/8">
+                <div class="option_div">24/8</div>
+            </option>
+        </select>
+        <label for="study_center">Оқу орталығы қысқаша екі сөзбен:</label>
+        <textarea name="study_center" cols="30" rows="3" id="study_center"
+            placeholder="Максималды ұхындығы: 15"></textarea>
+        <label for="interaction"></label>
+        <div class="interaction_div">
+            <input type="range" name="interaction" id="interaction" min="0" max="10" value="0">
+            <div id="show_interaction" ><p id="interaction_text">0</p><img src="Assets/star.svg" alt="interaction"></div>
+        </div>
+        <p id="error_message"></p>
+        <button type="submit" id="submit_button">Жыберу</button>
+        <script src="JS/homework.js"></script>
+    </form>
+</body>
+
+</html>

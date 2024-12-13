@@ -29,6 +29,9 @@ function onMouseLeave(){
 }
 
 // const changeSizeBox = document.getElementById("change_size_box");
+// const colorBtn = document.getElementById("change_color_btn");
+// const cWidthBtn = document.getElementById("change_width_btn");
+// const cHeightBtn = document.getElementById("change_height_btn");
 // changeSizeBox.addEventListener("click", changeColor);
 // changeSizeBox.addEventListener("click", changeWidth);
 // changeSizeBox.addEventListener("click", changeHeight);
