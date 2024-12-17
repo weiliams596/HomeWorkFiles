@@ -1,8 +1,10 @@
-const sercher = document.getElementById("search");
+const searcher = document.getElementById("search");
 const searcher_div = document.getElementById("searcher_div");
-const hiddenItems = document.getElementById("hidenItems");
+const hiddenItems = document.getElementById("hiddenItems");
 
 const snow_shower = document.getElementById("snow_shower");
+
+let insertArray = [];
 
 
 let bIsClicked = false;
@@ -24,20 +26,10 @@ function makeShower() {
     showItems();
 }
 
-sercher.addEventListener("focus", function () {
-    bIsClicked = true;
-    makeShower();
-});
-
-sercher.addEventListener("blur", function () {
-    bIsClicked = false;
-    makeShower();
-});
-
 
 function snowRandomMove(snow) {
     let randomNum = Math.random() * 15;
-    snow.style.left = parseFloat(snow.style.left) + (randomNum % 2? randomNum : -randomNum)  + "px";
+    snow.style.left = parseFloat(snow.style.left) + (randomNum % 2 ? randomNum : -randomNum) + "px";
 }
 
 
@@ -60,6 +52,49 @@ function makeSnow() {
 
 }
 
-snow_shower.addEventListener("click", function () {
-    makeSnow();
+
+function addHiddenItems() {
+    insertArray.forEach(function (item) {
+        const newItem = document.createElement("div");
+        const newImg = document.createElement("img");
+        newImg.src = "Assets/Icon/search.svg";
+        newImg.alt = "search";
+        newItem.classList.add("item");
+        newItem.appendChild(newImg);
+        newItem.appendChild(document.createTextNode(item));
+        newItem.addEventListener("click", function () {
+            searcher.value = this.textContent;
+            console.log("You clicked on " + this.textContent);
+            
+        });
+        hiddenItems.appendChild(newItem);
+    });
+}
+
+function removeHiddenItems() {
+    hiddenItems.innerHTML = "";
+}
+
+searcher.addEventListener("change", function () {
+    if (insertArray.length < 1 || searcher.value !== "") {
+        if (insertArray.includes(searcher.value) === false) {
+            insertArray.push(searcher.value);
+        }
+    }
+    console.log(insertArray);
+});
+
+searcher.addEventListener('focus', function () {
+    bIsClicked = true;
+    removeHiddenItems();
+    addHiddenItems();
+    makeShower();
+});
+
+searcher.addEventListener('blur', function () {
+    setTimeout(() => {
+        bIsClicked = false;
+        removeHiddenItems();
+        makeShower();
+    }, 500);
 });
