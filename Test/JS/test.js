@@ -49,9 +49,11 @@ function makeSnow() {
         clearInterval(intervalId);
         snow_shower.removeChild(snow);
     }, 10000);
-
 }
 
+snow_shower.addEventListener("click", function () {
+    makeSnow();
+});
 
 function addHiddenItems() {
     insertArray.forEach(function (item) {
