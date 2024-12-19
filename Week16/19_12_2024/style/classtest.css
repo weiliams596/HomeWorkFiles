@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+#blog-form{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: auto;
+    background-color: #fff;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    padding: 20px;
+}
+
+.margintop{
+    margin-top: 10px;
+}
+
+label{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+input,textarea{
+    font-size: 22px;
+    border-radius: 5px;
+    border: 1px solid #87e2f1;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-btn{
+    background-color: aqua;
+    border: none;
+    border-radius: 10px;
+    height: 36px;
+    font-size: 22px;
+    color: white;
+}
+
+#add-btn:hover{    
+    background-color: #87e2f1;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#search-btn{    
+    background-color: #b1f187;
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+    height: 40px;
+    font-size: 24px;
+    color: white;
+}
+
+#search-btn:hover{
+    background-color: #87db56;
+}
+
+.blog-list{
+    display: flex;
+    flex-direction: column;
+    width: 580px;
+    margin-top: 20px;
+    background-color: blanchedalmond;
+    border-radius: 15px;
+}
+
+.post{
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    padding:10px;
+    margin-bottom: 10px;
+}
+
+.edit-btn{
+    background-color: #87edf1;
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+    height: 40px;
+    font-size: 24px;
+    color: white;
+}
+
+.edit-btn:hover{
+    background-color: #56dbdb;
+}
+
+.delete-btn{
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+    height: 40px;
+    font-size: 24px;
+    color: white;
+}
+
+.delete-btn:hover{
+    background-color: darkred;
+}

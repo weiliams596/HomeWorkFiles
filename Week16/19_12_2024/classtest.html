@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19.12.2024 Class Test</title>
+    <link rel="stylesheet" href="style/classtest.css">
+</head>
+
+<body>
+    <h1>19.12.2024 Class Test</h1>
+    <form id="blog-form">
+        <h1>Блог Жазбалары</h1>
+        <label for="searcher">Мазмұнды еңгізіңіз:</label>
+        <input type="text" id="searcher" name="searcher" placeholder="Еңгізіңіз">
+        <button id="search-btn" class="margintop" onclick="searchPosts(event)">Іздеу</button>
+        <label for="title" class="margintop">Тақырып:</label>
+        <input type="text" id="title" name="title" placeholder="Тақырыпты еңгізіңіз" required>
+        <label for="content" class="margintop">Мазмұны:</label>
+        <textarea id="content" name="content" placeholder="Мазмұнды еңгізіңіз" required></textarea>
+        <button id="add-btn" class="margintop" onclick="addPost(event)">Жазба қосу</button>
+        <div id="post-list">
+        </div>
+        </label>
+    </form>
+    <script src="JS/classtest.js"></script>
+</body>
+
+</html>
