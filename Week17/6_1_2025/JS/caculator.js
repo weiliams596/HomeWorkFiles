@@ -28,11 +28,11 @@ const inputNumber = (number) => {
             return;
         }
     }
-    if(bIsUseOparator){
+    if (bIsUseOparator) {
         document.getElementById("calculator-input").value = number;
         bIsUseOparator = false;
     }
-    else{
+    else {
         document.getElementById("calculator-input").value += number;
     }
 };
@@ -52,7 +52,7 @@ const add = () => {
     document.getElementById("calculator-input").value = parseFloat(temptNumber) + parseFloat(input);
     temptNumber = document.getElementById("calculator-input").value;
     bIsUseOparator = true;
-    document.getElementById("equal-btn").addEventListener("click", ()=>{
+    document.getElementById("equal-btn").addEventListener("click", () => {
         add();
         temptNumber = "0";
     });
@@ -87,8 +87,15 @@ const percentage = () => {
     document.getElementById("equal-btn").addEventListener("click", percentage);
 };
 
+const dot = () => {
+    if (!document.getElementById("calculator-input").value.includes(".")) {
+        document.getElementById("calculator-input").value += ".";
+    }
+}
+
 document.getElementById("plus-btn").addEventListener("click", add);
 document.getElementById("subtract-btn").addEventListener("click", subtract);
 document.getElementById("multiply-btn").addEventListener("click", multiply);
 document.getElementById("divide-btn").addEventListener("click", divide);
 document.getElementById("percent-btn").addEventListener("click", percentage);
+document.getElementById("dot-btn").addEventListener("click", dot);
