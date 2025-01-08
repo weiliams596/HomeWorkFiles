@@ -18,9 +18,7 @@ const imageArray = [
 
 const checkCard = () => {
     if (check_cards.length === 2) {
-        console.log(check_cards);
         if(check_cards[0].card_index === check_cards[1].card_index){
-            console.log('match');
             check_cards[0].isRight = true;
             check_cards[1].isRight = true;
             check_cards = [];
@@ -29,7 +27,6 @@ const checkCard = () => {
         else {
             let temp =[];
             check_cards.map(card => {temp.push(card);});
-            console.log('not match');
             check_cards[0].isRight = false;
             check_cards[1].isRight = false;
             temp[0].node.click();
@@ -75,7 +72,6 @@ const card = {
             check_cards.splice(check_cards.indexOf(this),1);
             this.node.classList.remove('oc-flip-card');
         }
-        console.log(check_cards);
     }
 };
 
@@ -90,7 +86,6 @@ const createCards = () => {
         cardObj.image = imageArray[index].image;
         cardObj.card_index = imageArray[index].card_index;
         cardObj.makeCard();
-        console.log(cardObj);
     });
 }
 
