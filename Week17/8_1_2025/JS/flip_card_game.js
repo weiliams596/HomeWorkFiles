@@ -1,7 +1,9 @@
-
-
 const game_root = document.getElementById('card-root');
 game_root.innerHTML = '';
+
+let check_cards = [];
+
+const cardMap = [];
 
 const imageArray = [
     { image: 'Assets/Images/Banana.png', card_index: 0 },
@@ -14,11 +16,37 @@ const imageArray = [
     { image: 'Assets/Images/Pomegranate.png', card_index: 7 },
 ];
 
+const checkCard = () => {
+    if (check_cards.length === 2) {
+        console.log(check_cards);
+        if(check_cards[0].card_index === check_cards[1].card_index){
+            console.log('match');
+            check_cards[0].isRight = true;
+            check_cards[1].isRight = true;
+            check_cards = [];
+            return true;
+        }
+        else {
+            let temp =[];
+            check_cards.map(card => {temp.push(card);});
+            console.log('not match');
+            check_cards[0].isRight = false;
+            check_cards[1].isRight = false;
+            temp[0].node.click();
+            temp[1].node.click();
+            return false;
+        }
+    }
+}
+
 const card = {
     image: '',
     card_index: 0,
+    isClicked: false,
+    isRight: false,
+    node: null,
     makeCard: function () {
-        newCard = document.createElement('div');
+        let newCard = document.createElement('div');
         newCard.classList.add('card');
         newCard.innerHTML = `
         <div class="card-inner">
@@ -30,21 +58,37 @@ const card = {
             </div>
         </div>
         `;
+        newCard.addEventListener('click', (e) => {
+            if(this.isRight)return;
+            this.isClicked=!this.isClicked;
+            this.flipCard();
+            checkCard();
+        });
+        this.node = newCard;
         game_root.appendChild(newCard);
+    },
+    flipCard: function () {
+        if (this.isClicked) {
+            check_cards.push(this);
+            this.node.classList.add('oc-flip-card');
+        }else{
+            check_cards.splice(check_cards.indexOf(this),1);
+            this.node.classList.remove('oc-flip-card');
+        }
+        console.log(check_cards);
     }
 };
+
 
 const randomFunc = () => {
     return Math.random() * 100 % 8;
 }
 
-const cardMap = [];
-
 const createCards = () => {
-    cardMap.forEach(cardIndex => {
+    cardMap.map(index=>{
         let cardObj = Object.create(card);
-        cardObj.image = imageArray[cardIndex].image;
-        cardObj.card_index = imageArray[cardIndex].card_index;
+        cardObj.image = imageArray[index].image;
+        cardObj.card_index = imageArray[index].card_index;
         cardObj.makeCard();
         console.log(cardObj);
     });
@@ -77,6 +121,7 @@ const init = () => {
         }
     }
     cardMap.push(...temptArray);
-    console.log(cardMap);
     createCards();
 }
+
+init();
