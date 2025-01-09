@@ -1,9 +1,20 @@
 const game_root = document.getElementById('card-root');
 game_root.innerHTML = '';
 
-let check_cards = [];
+const timer_root = document.getElementById('time');
+const player_root = document.getElementById("player");
+const Score_root = document.getElementById('score');
 
-const cardMap = [];
+let check_cards = [];
+let Score = 0;
+
+let outTime = 35;
+
+var cardMap = [];
+let playerName = '';
+
+let timer = null;
+
 
 const imageArray = [
     { image: 'Assets/Images/Banana.png', card_index: 0 },
@@ -18,19 +29,33 @@ const imageArray = [
 
 const checkCard = () => {
     if (check_cards.length === 2) {
-        if(check_cards[0].card_index === check_cards[1].card_index){
+        if (check_cards[0].card_index === check_cards[1].card_index) {
             check_cards[0].isRight = true;
             check_cards[1].isRight = true;
             check_cards = [];
+            outTime += 5;
+            Score += 2;
+            if (allCompleted()) {
+                setTimeout(() => {
+                    clearInterval(timer);
+                    if (prompt("Do you play agian?(Type 'y' to try again)").toLowerCase() == 'y') {
+                        reStart();
+                    }
+                },2500);
+            }
             return true;
         }
         else {
-            let temp =[];
-            check_cards.map(card => {temp.push(card);});
+            let temp = [];
+            check_cards.map(card => { temp.push(card); });
             check_cards[0].isRight = false;
             check_cards[1].isRight = false;
-            temp[0].node.click();
-            temp[1].node.click();
+            setTimeout(() => {
+                temp[0].node.click();
+                temp[1].node.click();
+            }, 500);
+            outTime -= 2;
+
             return false;
         }
     }
@@ -55,12 +80,12 @@ const card = {
             </div>
         </div>
         `;
-        newCard.addEventListener('click', (e) => {
-            if(this.isRight)return;
-            this.isClicked=!this.isClicked;
-            this.flipCard();
-            checkCard();
-        });
+        // newCard.addEventListener('click', (e) => {
+        //     if (this.isRight) return;
+        //     this.isClicked = !this.isClicked;
+        //     this.flipCard();
+        //     checkCard();
+        // });
         this.node = newCard;
         game_root.appendChild(newCard);
     },
@@ -68,8 +93,8 @@ const card = {
         if (this.isClicked) {
             check_cards.push(this);
             this.node.classList.add('oc-flip-card');
-        }else{
-            check_cards.splice(check_cards.indexOf(this),1);
+        } else {
+            check_cards.splice(check_cards.indexOf(this), 1);
             this.node.classList.remove('oc-flip-card');
         }
     }
@@ -80,17 +105,43 @@ const randomFunc = () => {
     return Math.random() * 100 % 8;
 }
 
+const allCompleted = () => {
+    let isCompleted = true;
+    cardMap.map(card => {
+        if (!card.isRight) {
+            isCompleted = false;
+        }
+    });
+    return isCompleted;
+}
+
 const createCards = () => {
-    cardMap.map(index=>{
+    let temptArray = [];
+    temptArray = cardMap.map(index => {
         let cardObj = Object.create(card);
         cardObj.image = imageArray[index].image;
         cardObj.card_index = imageArray[index].card_index;
         cardObj.makeCard();
+        return cardObj;
     });
+    cardMap = [];
+    cardMap.push(...temptArray);
+    console.log(cardMap);
+    cardMap.map(card => {
+        card.node.classList.add('oc-flip-card');
+    });
+}
+
+const reStart = () => {
+    game_root.innerHTML = '';
+    init();
 }
 
 const init = () => {
     let temptArray = [];
+    cardMap = [];
+    outTime = 35;
+    Score_root.textContent = Score;
     while (cardMap.length < 8) {
         let randomNumb = randomFunc();
         if (!cardMap.length) {
@@ -116,7 +167,43 @@ const init = () => {
         }
     }
     cardMap.push(...temptArray);
+
+    do {
+        playerName = prompt('Plase enter your name:');
+    } while (playerName == '' || playerName == null || playerName == undefined);
+    player_root.textContent = playerName;
+
+
     createCards();
+
+
+    setTimeout(() => {
+        cardMap.map(card => {
+            card.node.classList.remove('oc-flip-card');
+            card.node.addEventListener('click', (e) => {
+                if (card.isRight) return;
+                card.isClicked = !card.isClicked;
+                card.flipCard();
+                checkCard();
+            });
+        });
+    }, 5000);
+
+
+
+    timer = setInterval(() => {
+        outTime--;
+        if (outTime < 0) {
+            outTime = 0;
+            clearInterval(timer);
+            if (prompt("Do you try agian?(Type 'y' to try again)").toLowerCase() == 'y') {
+                reStart();
+            }
+        }
+        timer_root.textContent = outTime + 's';
+    }, 1000);
 }
+
+
 
 init();
