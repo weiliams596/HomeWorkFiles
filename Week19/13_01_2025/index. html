@@ -1,1 +1,14 @@
-<!-- This is html index page --> 
+<!-- This is html index page -->
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>13.01.2025 Homework</title>
+</head>
+<body>
+  <h1>This is index of home work</h1>
+  <p><a href="Homework.html">Homework</a></p>
+</body>
+</html>
