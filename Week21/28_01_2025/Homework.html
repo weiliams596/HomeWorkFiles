@@ -27,6 +27,8 @@
 
         clearBtn.addEventListener("click", () => {
             textArea.value = "";
+            //localStorage.removeItem("saveData");
+            localStorage.clear();
         });
 
         const savedText = localStorage.getItem("saveData");
