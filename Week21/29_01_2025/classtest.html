@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../1850178.png">
     <title>Class test</title>
 </head>
+
 <body>
-    
+    <form style="width: 200px;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+        <div class="btn-group">
+            <button id="add-btn">Add</button>
+            <button id="show-btn">Show</button>
+            <button id="clear-btn">Clear</button>
+        </div>
+    </form>
+    <div class="list">
+
+    </div>
+
+    <script>
+        let items = [];
+        const nameInput = document.getElementById("name");
+        const ageInput = document.getElementById("age");
+
+        const addBtn = document.getElementById("add-btn");
+        const showBtn = document.getElementById("show-btn");
+        const clearBtn = document.getElementById("clear-btn");
+
+        const listDiv = document.querySelector(".list");
+
+        const makeShowList = (item) => {
+            const li = document.createElement("li");
+            const btn = document.createElement("button");
+            btn.innerHTML = "Delete";
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                items = items.filter(i => i.name !== item.name);
+                listDiv.innerHTML = "";
+                items.forEach(i => {
+                    makeShowList(i);
+                });
+                sessionStorage.setItem("items", JSON.stringify(items));
+            });
+            li.innerHTML = `${item.name} - ${item.age}`;
+            li.appendChild(btn);
+
+            listDiv.appendChild(li);
+        };
+
+        addBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const name = nameInput.value;
+            const age = ageInput.value;
+            if (name && age) {
+                items.push({ name: name, age: age });
+                listDiv.innerHTML = "";
+                items.forEach(item => {
+                    makeShowList(item);
+                });
+                sessionStorage.setItem("items", JSON.stringify(items));
+                nameInput.value = "";
+                ageInput.value = "";
+            }
+        });
+        showBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const items = JSON.parse(sessionStorage.getItem("items"));
+            listDiv.innerHTML = "";
+            if (items)
+                items.forEach(item => {
+                    makeShowList(item);
+                });
+        });
+        clearBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            nameInput.value = "";
+            ageInput.value = "";
+            listDiv.innerHTML = "";
+            sessionStorage.removeItem("items");
+            items = [];
+        });
+
+    </script>
 </body>
+
 </html>

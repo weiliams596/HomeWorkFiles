@@ -22,8 +22,8 @@
         const saveBtn = document.getElementById("save-btn");
         const clearBtn = document.getElementById("clear-btn");
 
-        textArea.textContent = localStorage.getItem("saveData");
-
+        //textArea.textContent = localStorage.getItem("saveData");
+        textArea.value = localStorage.getItem("saveData");
 
         saveBtn.addEventListener("click", () => {
             if(textArea.value.trim() === ""){
