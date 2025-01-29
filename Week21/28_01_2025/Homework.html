@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28.01.2025 Homework</title>
+</head>
+<body>
+    <h1>You can save some text here!</h1>
+    <div class="text-save-div">
+        <textarea name="text" id="text-content" rows="10" cols="50">
+        </textarea>
+        <div class="btn-div">
+            <button id="save-btn">Save</button>
+            <button id="clear-btn">Clear</button>
+        </div>
+    </div>
+    <script>
+        const textArea = document.getElementById("text-content");
+        const saveBtn = document.getElementById("save-btn");
+        const clearBtn = document.getElementById("clear-btn");
+
+        saveBtn.addEventListener("click", () => {
+            const text = textArea.value;
+            localStorage.setItem("saveData", text);
+        });
+
+        clearBtn.addEventListener("click", () => {
+            textArea.value = "";
+        });
+
+        const savedText = localStorage.getItem("saveData");
+        if (savedText) {
+            textArea.value = savedText;
+        }
+    </script>
+</body>
+</html>

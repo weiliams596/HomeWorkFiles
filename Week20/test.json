@@ -1,0 +1,57 @@
+[
+    {
+        "options": [
+            "Hyper Text Markup Language",
+            "Hyperlinks and Text Markup Language",
+            "Home Tool Markup Language",
+            "Hyper Tool Markup Language"
+        ],
+        "answer": 0,
+        "question": "What does HTML stand for?",
+        "id": "1"
+    },
+    {
+        "options": [
+            "<script>",
+            "<javascript>",
+            "<js>",
+            "<code>"
+        ],
+        "answer": 0,
+        "question": "Inside which HTML element do we put the JavaScript code?",
+        "id": "2"
+    },
+    {
+        "options": [
+            "Document Object Model",
+            "Data Object Management",
+            "Document Orientation Model",
+            "Data Oriented Module"
+        ],
+        "answer": 0,
+        "question": "What does DOM stand for in JavaScript?",
+        "id": "3"
+    },
+    {
+        "options": [
+            "querySelector()",
+            "getElementById()",
+            "getElementsByClassName()",
+            "getElementByTagName()"
+        ],
+        "answer": 1,
+        "question": "Which method is used to select an element by its ID in JavaScript?",
+        "id": "4"
+    },
+    {
+        "options": [
+            "push()",
+            "shift()",
+            "pop()",
+            "splice()"
+        ],
+        "answer": "2",
+        "question": "Which method is used to remove the last element of an array?",
+        "id": "5"
+    }
+]
