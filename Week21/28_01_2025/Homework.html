@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>28.01.2025 Homework</title>
 </head>
+
 <body>
     <h1>You can save some text here!</h1>
     <div class="text-save-div">
@@ -19,6 +21,9 @@
         const textArea = document.getElementById("text-content");
         const saveBtn = document.getElementById("save-btn");
         const clearBtn = document.getElementById("clear-btn");
+
+        textArea.textContent = localStorage.getItem("saveData");
+
 
         saveBtn.addEventListener("click", () => {
             const text = textArea.value;
@@ -37,4 +42,5 @@
         }
     </script>
 </body>
+
 </html>
