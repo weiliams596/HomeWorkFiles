@@ -10,7 +10,7 @@
 <body>
     <h1>You can save some text here!</h1>
     <div class="text-save-div">
-        <textarea name="text" id="text-content" rows="10" cols="50">
+        <textarea name="text" id="text-content" type="text" rows="10" cols="50" required>
         </textarea>
         <div class="btn-div">
             <button id="save-btn">Save</button>
@@ -26,6 +26,10 @@
 
 
         saveBtn.addEventListener("click", () => {
+            if(textArea.value.trim() === ""){
+                alert("Please enter some text to save.");
+                return;
+            }
             const text = textArea.value;
             localStorage.setItem("saveData", text);
         });
