@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form style="width: 200px;">
+    <form style="width: 200px;" id="form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
         <label for="age">Age:</label>
@@ -20,14 +20,14 @@
             <button id="clear-btn">Clear</button>
         </div>
     </form>
-    <div class="list">
-
-    </div>
+    <div class="list"></div>
 
     <script>
-        let items = [];
+        let items = JSON.parse(sessionStorage.getItem("items")) || [];
         const nameInput = document.getElementById("name");
         const ageInput = document.getElementById("age");
+
+        const form = document.getElementById("form");
 
         const addBtn = document.getElementById("add-btn");
         const showBtn = document.getElementById("show-btn");
@@ -35,21 +35,47 @@
 
         const listDiv = document.querySelector(".list");
 
-        const makeShowList = (item) => {
+        const makeShowList = (item,index) => {
             const li = document.createElement("li");
-            const btn = document.createElement("button");
-            btn.innerHTML = "Delete";
-            btn.addEventListener("click", (e) => {
+            const btnDel = document.createElement("button");
+            const btnEdit = document.createElement("button");
+            btnEdit.innerHTML = "Edit";
+            btnEdit.addEventListener("click", (e) => {
+                e.preventDefault();
+                const _index = index;
+                console.log(_index);
+                console.log(items[_index]);
+                nameInput.value = items[_index].name;
+                ageInput.value = items[_index].age;
+                const agreetBtn = document.createElement("button");
+                agreetBtn.innerHTML = "Agree";
+                agreetBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const _index= index;
+                    items[_index].name = nameInput.value;
+                    items[_index].age = ageInput.value;
+                    listDiv.innerHTML = "";
+                    items.forEach((i,index) => {
+                        makeShowList(i,index);
+                    });
+                    sessionStorage.setItem("items", JSON.stringify(items));
+                    form.removeChild(agreetBtn);
+                });
+                form.appendChild(agreetBtn);
+            });
+            btnDel.innerHTML = "Delete";
+            btnDel.addEventListener("click", (e) => {
                 e.preventDefault();
                 items = items.filter(i => i.name !== item.name);
                 listDiv.innerHTML = "";
-                items.forEach(i => {
-                    makeShowList(i);
+                items.forEach((i,index) => {
+                    makeShowList(i,index);
                 });
                 sessionStorage.setItem("items", JSON.stringify(items));
             });
             li.innerHTML = `${item.name} - ${item.age}`;
-            li.appendChild(btn);
+            li.appendChild(btnEdit);
+            li.appendChild(btnDel);
 
             listDiv.appendChild(li);
         };
