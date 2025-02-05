@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Announcer</title>
+</head>
+<body>
+    <button onclick="announceNumber()">Click Me to Announce a Number</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function announceNumber() {
+            // Your Azure Speech service key and region
+            var subscriptionKey = 'YOUR_SUBSCRIPTION_KEY';
+            var serviceRegion = 'YOUR_SERVICE_REGION'; // e.g., "eastus"
+
+            var number = Math.floor(Math.random() * 100); // Generate a random number between 0 and 99
+            var text = 'Число ' + number; // The number in Russian
+
+            var speechConfig = new SpeechSDK.SpeechConfig.fromSubscription(subscriptionKey, serviceRegion);
+            speechConfig.speechSynthesisLanguage = "ru-RU"; // Russian
+
+            var synthesizer = new SpeechSDK.SpeechSynthesizer(speechConfig);
+
+            var audioConfig = SpeechSDK.AudioConfig.fromDefaultSpeakerOutput();
+
+            synthesizer.speakTextAsync(
+                text,
+                function (result) {
+                    if (result.reason === SpeechSDK.ResultReason.SynthesizingAudioCompleted) {
+                        console.log("Speech synthesized for text [" + text + "]");
+                    } else {
+                        console.error("Speech synthesis canceled, " + result.errorDetails);
+                    }
+                    synthesizer.close();
+                },
+                function (err) {
+                    console.error("Error: " + err);
+                    synthesizer.close();
+                });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
+</body>
+</html>

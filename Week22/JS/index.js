@@ -3,15 +3,41 @@ const weathersApi = "https://api.openweathermap.org/data/2.5/weather?";
 const lang = "&lang=ru"
 const apiKey = "&appid=e3ad77404dc88bee59f4a50942c3dbc6";
 
-const mainDoc = document.getElementById("main");
+const mainDoc = document.getElementById("show-list");
 const localWeather = document.getElementById("local-weather");
 
+
+const searchBtn = document.getElementById("search-btn");
+searchBtn.addEventListener("click",async () => {
+    cleanAllInfo();
+    const city = document.getElementById("search-input");
+    await showOnceWeather( await getWeather(city.value));
+});
+
+
+const localWeatherBtn = document.getElementById("choose-almaty");
+const allcitiesBtn = document.getElementById("choose-all-city");
+
+localWeatherBtn.addEventListener("click", async () => {
+    cleanAllInfo();
+    await showOnceWeather(await getWeather("Almaty"));
+});
+
+allcitiesBtn.addEventListener("click", async () => {
+    cleanAllInfo();
+    await initArrayOfCities();
+});
 
 let allInfo = [];
 const Kazakhstan = [];
 
+function cleanAllInfo() {
+    allInfo = [];
+    mainDoc.innerHTML = "";
+};
+
 const initArrayOfCities = async () => {
-    try{
+    try {
         const response = await fetch("Assets/JSON/Kazakhstan.json");
         if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -21,22 +47,51 @@ const initArrayOfCities = async () => {
         for (let i = 0; i < Kazakhstan.length; i++) {
             await getWeather(Kazakhstan[i]);
         }
+        showWeathers();
     }
-    catch(error){
+    catch (error) {
         console.error(error);
     }
 };
 
-function showWeathers(){
+async function showOnceWeather(info) {
+    cleanAllInfo();
+    const newSection = document.createElement("section");
+    newSection.classList.add("weather-section");
+    newSection.innerHTML = `    
+         <div class="card">  
+                <p class="city-name">${info.city}</p>
+                <img src="${info.iconUrl}" alt="${info.description}">
+                <p class="temp">${info.temp}°C</p>
+                <p class="weather-description">${info.description}</p>
+                <div class="other-info">
+                    <p class="time">Күншығу: ${new Date(info.sys.sunrise * 1000).toLocaleTimeString()}</p>
+                    <p class="time">Күнбату: ${new Date(info.sys.sunset * 1000).toLocaleTimeString()}</p>
+                </div>
+            </div>`;
+    mainDoc.appendChild(newSection);
+}
+
+function showWeathers() {
     allInfo.forEach(info => {
         const newSection = document.createElement("section");
         newSection.classList.add("weather-section");
-
+        newSection.innerHTML = `
+         <div class="card">  
+                <p class="city-name">${info.city}</p>
+                <img src="${info.iconUrl}" alt="${info.description}">
+                <p class="temp">${info.temp}°C</p>
+                <p class="weather-description">${info.description}</p>
+                <div class="other-info">
+                    <p class="time">Күншығу: ${new Date(info.sys.sunrise * 1000).toLocaleTimeString()}</p>
+                    <p class="time">Күнбату: ${new Date(info.sys.sunset * 1000).toLocaleTimeString()}</p>
+                </div>
+            </div>`;
+        mainDoc.appendChild(newSection);
     });
 
 }
 
-initArrayOfCities();
 
 async function getWeather(city) {
     const url = weathersApi + "q=" + city + apiKey + "&units=metric" + lang;
@@ -53,7 +108,9 @@ async function getWeather(city) {
         temptInfo.temp = data.main.temp;
         temptInfo.description = data.weather[0].description;
         temptInfo.sys = data.sys;
+        console.log(temptInfo);
         allInfo.push(temptInfo);
+        return temptInfo;
     }
     catch (error) {
         console.error(error);
