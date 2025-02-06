@@ -44,8 +44,8 @@
 
 #search-input {
     position: absolute;
-    top: 10%;
-    width: 300px;
+    top: calc(50% - 25px);
+    width: 100%;
     height: 50px;
     padding: 5px;
     border: none;
@@ -58,9 +58,9 @@
 
 #search-btn {
     position: absolute;
-    right: 8px;
+    right: calc(5% - 22px);
     height: 48px;
-    top: calc(10% + 1px);
+    top: calc(50% - 25px);
     width: 48px;
     border: none;
     background-color: transparent;
@@ -72,14 +72,8 @@
 }
 
 .gap-div {
-    height: 20vh;
+    height: 1vh;
     width: 100%;
-}
-
-.weather-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .choose-div{
@@ -98,11 +92,16 @@
     border-radius: 15px;
 }
 
+#show-list{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(10,1fr);
+    gap: 20px;
+}
 
 .card{
-    width: 30vw;
-    height: 22vh;
-    margin: 10px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,8 +113,7 @@
 }
 
 .card img{
-    width: 15vw;
-    
+    width:20%;    
 }
 
 .other-info{

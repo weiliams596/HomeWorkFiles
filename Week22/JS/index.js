@@ -56,10 +56,9 @@ const initArrayOfCities = async () => {
 
 async function showOnceWeather(info) {
     cleanAllInfo();
-    const newSection = document.createElement("section");
-    newSection.classList.add("weather-section");
-    newSection.innerHTML = `    
-         <div class="card">  
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("card");
+    newDiv.innerHTML = `
                 <p class="city-name">${info.city}</p>
                 <img src="${info.iconUrl}" alt="${info.description}">
                 <p class="temp">${info.temp}°C</p>
@@ -67,17 +66,15 @@ async function showOnceWeather(info) {
                 <div class="other-info">
                     <p class="time">Күншығу: ${new Date(info.sys.sunrise * 1000).toLocaleTimeString()}</p>
                     <p class="time">Күнбату: ${new Date(info.sys.sunset * 1000).toLocaleTimeString()}</p>
-                </div>
-            </div>`;
-    mainDoc.appendChild(newSection);
+                </div>`;
+    mainDoc.appendChild(newDiv);
 }
 
 function showWeathers() {
     allInfo.forEach(info => {
-        const newSection = document.createElement("section");
-        newSection.classList.add("weather-section");
-        newSection.innerHTML = `
-         <div class="card">  
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("card");
+        newDiv.innerHTML = `
                 <p class="city-name">${info.city}</p>
                 <img src="${info.iconUrl}" alt="${info.description}">
                 <p class="temp">${info.temp}°C</p>
@@ -85,9 +82,8 @@ function showWeathers() {
                 <div class="other-info">
                     <p class="time">Күншығу: ${new Date(info.sys.sunrise * 1000).toLocaleTimeString()}</p>
                     <p class="time">Күнбату: ${new Date(info.sys.sunset * 1000).toLocaleTimeString()}</p>
-                </div>
-            </div>`;
-        mainDoc.appendChild(newSection);
+                </div>`;
+        mainDoc.appendChild(newDiv);
     });
 
 }
