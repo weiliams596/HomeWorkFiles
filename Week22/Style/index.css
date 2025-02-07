@@ -95,8 +95,8 @@
 #show-list{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(10,1fr);
     gap: 20px;
+    height: calc(100% - 300px);
 }
 
 .card{

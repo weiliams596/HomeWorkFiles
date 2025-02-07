@@ -8,10 +8,10 @@ const localWeather = document.getElementById("local-weather");
 
 
 const searchBtn = document.getElementById("search-btn");
-searchBtn.addEventListener("click",async () => {
+searchBtn.addEventListener("click", async () => {
     cleanAllInfo();
     const city = document.getElementById("search-input");
-    await showOnceWeather( await getWeather(city.value));
+    await showOnceWeather(await getWeather(city.value));
 });
 
 
@@ -19,7 +19,6 @@ const localWeatherBtn = document.getElementById("choose-almaty");
 const allcitiesBtn = document.getElementById("choose-all-city");
 
 localWeatherBtn.addEventListener("click", async () => {
-    cleanAllInfo();
     await showOnceWeather(await getWeather("Almaty"));
 });
 
@@ -29,7 +28,7 @@ allcitiesBtn.addEventListener("click", async () => {
 });
 
 let allInfo = [];
-const Kazakhstan = [];
+let allCity = [];
 
 function cleanAllInfo() {
     allInfo = [];
@@ -43,9 +42,9 @@ const initArrayOfCities = async () => {
             throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        Kazakhstan.push(...data.cities);
-        for (let i = 0; i < Kazakhstan.length; i++) {
-            await getWeather(Kazakhstan[i]);
+        allCity.push(...data.cities);
+        for (let i = 0; i < allCity.length; i++) {
+            await getWeather(allCity[i]);
         }
         showWeathers();
     }
@@ -90,10 +89,13 @@ function showWeathers() {
 
 
 async function getWeather(city) {
+
     const url = weathersApi + "q=" + city + apiKey + "&units=metric" + lang;
     try {
         const response = await fetch(url);
         if (!response.ok) {
+            console.log(url);
+            console.log(city);
             throw new Error("Network response was not ok");
         }
         const data = await response.json();
@@ -104,7 +106,6 @@ async function getWeather(city) {
         temptInfo.temp = data.main.temp;
         temptInfo.description = data.weather[0].description;
         temptInfo.sys = data.sys;
-        console.log(temptInfo);
         allInfo.push(temptInfo);
         return temptInfo;
     }
