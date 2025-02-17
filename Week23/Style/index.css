@@ -114,6 +114,16 @@ header {
     display: none;
 }
 
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(0, 255, 255, 0.521);
+}
+
 @keyframes showdetails {
     0%{
 
