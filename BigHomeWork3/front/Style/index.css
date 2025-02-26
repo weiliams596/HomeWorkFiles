@@ -1,0 +1,62 @@
+@import url("global.css");
+
+.teacher-section, .lesson-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.left-shower {
+    padding: 10px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    width: 50%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.right-shower {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    height: 40vh;
+}
+
+/* .right-shower a {
+    color: #000;
+    text-decoration: none;
+} */
+
+.right-card {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    grid-template-columns: 1fr 6fr;
+    font-size: 2vw;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.right-card .image {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+hr{
+    width: 100%;
+}
+
+#footer {
+    background-color: #000;
+    color: white;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

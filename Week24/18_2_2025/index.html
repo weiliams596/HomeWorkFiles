@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class test</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+
+        #change_color {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid black;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>Learn DOM Methods and Events</h1>
+            <p id="first_p">This is a content, on your click bottom button,this will change.</p>
+            <button onclick="changeContent()">Click me</button>
+            <div id="change_color">
+                <p>This is a color area, on your click bottom buttton,I will change color.</p>
+            </div>
+            <button onclick="changeColor()">Change Color</button>
+            <div class="new_element_list"></div>
+            <button onclick="addNewElement()">Add new element</button>
+            <p id="second_p" onmouseenter="moseEnter()" onmouseout="mouseOut()">This is a content, on your move
+                mouse,this will change.</p>
+            <script>
+                function changeContent() {
+                    document.getElementById('first_p').innerHTML = "This is a new content";
+                }
+
+                function changeColor() {
+                    document.getElementById('change_color').style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+                }
+
+                function addNewElement() {
+                    var newElement = document.createElement('p');
+                    newElement.innerHTML = "This is a new element";
+                    newElement.addEventListener('click', (e) => {
+                        e.target.remove();
+                    });
+                    document.querySelector('.new_element_list').appendChild(newElement);
+                }
+                function moseEnter() {
+                    document.querySelector('#second_p').style.color = 'red';
+                }
+                function mouseOut() {
+                    document.querySelector('#second_p').style.color = 'black';
+                }
+            </script>
+        </section>
+        <section>
+            <div id="shower">
+
+            </div>
+            <button onclick="makeOrder()">Click me to make your order</button>
+            <script>
+                function makeOrder() {
+                    const shower = document.getElementById('shower');
+                    shower.innerHTML = `
+                    <p>Your order is submit</p>
+                    `;
+                    setTimeout(() => {
+                        shower.innerHTML = `
+                        <p>Your order is append in the list!</p>
+                        `;
+                    }, 3000);
+                    setTimeout(() => {
+                        shower.innerHTML=`
+                        <p>Your order is complite.</p>
+                        `;
+                    }, 6000);
+                }
+            </script>
+        </section>
+    </main>
+
+
+</body>
+
+</html>

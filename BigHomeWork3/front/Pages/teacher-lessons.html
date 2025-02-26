@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher lessons page</title>
+    <link rel="stylesheet" href="../Style/teacher-lessons.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left-items">
+            logo
+        </div>
+        <div class="middle-items">
+            <a href="../../index.html">Home</a>
+        </div>
+    </header>
+    <main>
+        <h2>Teacher Lessons Page</h2>
+        <div class="buttonController">
+            <button id="insert-btn"><img src="../Assets/icons/file-earmark-plus.svg" alt="insert"></button>
+            <button id="update-btn"><img src="../Assets/icons/arrow-clockwise.svg" alt="update"></button>
+            <button id="delete-btn"><img src="../Assets/icons/trash3.svg" alt="delete"></button>
+        </div>
+       <form id="insert-lessons-form">
+            <label for="lesson-name">Lesson Name:</label>
+            <input type="text" id="lesson-name" name="lesson-name" required>
+            <label for="lesson-description">Lesson Description:</label>
+            <textarea id="lesson-description" name="lesson-description" required></textarea>
+            <label for="lesson-video-url">Lesson Video URL:</label>
+            <input type="text" id="lesson-video-url" name="lesson-video-url" required>
+            <button>Insert Lesson</button>
+        </form>
+         <!-- <form id="delete-lessons-form">
+            <label for="lesson-id">Lesson ID:</label>
+            <input type="text" id="lesson-id" name="lesson-id" required>
+            <button>Delete Lesson</button>
+        </form>
+        <form id="update-lessons-form">
+            <label for="lesson-id">Lesson ID:</label>
+            <input type="text" id="lesson-id" name="lesson-id" required>
+            <label for="lesson-name">Lesson Name:</label>
+            <input type="text" id="lesson-name" name="lesson-name" required>
+            <label for="lesson-description">Lesson Description:</label>
+            <textarea id="lesson-description" name="lesson-description" required></textarea>
+            <label for="lesson-video-url">Lesson Video URL:</label>
+            <input type="text" id="lesson-video-url" name="lesson-video-url" required>
+            <button>Update Lesson</button>
+        </form> -->
+    </main>
+    <script src="../JS/global.js"></script>
+</body>
+</html>

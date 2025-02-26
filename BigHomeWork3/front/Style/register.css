@@ -1,0 +1,66 @@
+@import url('global.css');
+
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-form{
+    display: flex;
+    flex-direction: column;
+    font-size: 2vw;
+    width: 400px;
+    background-color: var(--Secondary-Color1);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#register-form input,#register-form select{
+    padding:5px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+}
+
+#register-form button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    color: var(--Text-Color2);
+    background-color: var(--Primary-Color);
+    font-size: 1.3vw;
+    cursor: pointer;
+}
+
+#register-form button:hover{
+    background-color: var(--Secondary-Color2);
+}
+
+#register-form input:focus ,#register-form input:active,#register-form button:focus, #register-form button:active{
+    outline: none;
+}
+
+#register-form label{
+    margin:10px 0;
+}
+
+.input-psw-shower{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.input-psw-shower img{
+    position: absolute;
+    right: 1vw;
+    top:calc(50% - 1vw);
+    font-size: 1.2vw;
+}
+
+#error-message{
+    color: red;
+}

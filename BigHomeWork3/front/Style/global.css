@@ -1,0 +1,62 @@
+:root{
+    --Primary-Color:#1E88E5;
+    --Secondary-Color1:#90CAF9;
+    --Secondary-Color2:#0D47A1;
+    --Neutral-Color1:#F5F5F5;
+    --Neutral-Color2:#616161;
+    --Accent-Color1:#43A047;
+    --Accent-Color2:#FB8C00;
+    --Text-Color1:#212121;
+    --Text-Color2:#FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: var(--Text-Color2);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size:calc(0.5em + 1vw);
+    background-color: var(--Primary-Color);
+}
+
+.header{
+    background-color:var(--Secondary-Color2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.header a{
+    margin: 0 10px;
+}
+
+#main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--Primary-Color);
+}
+
+.square-image{
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.double-letter-space{
+    letter-spacing: 2em;
+}

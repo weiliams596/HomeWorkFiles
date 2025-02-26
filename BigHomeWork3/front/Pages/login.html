@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="../Style/login.css">
+</head>
+<body>
+    <form id="SignInForm">
+        <label for="username">User name:</label>
+        <input type="text" name="username" id="username" 
+        placeholder="Enter user name or email." pattern="[a-zA-Z0-9._%+-]{2,}$">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" 
+        placeholder="Enter password.">
+        <p id="error-msg"></p>
+        <button type="submit" id="login-btn">Log in</button>
+    </form>
+    <script type="module" src="../JS/login.js"></script>
+    <script src="../JS/global.js"></script>
+</body>
+</html>
