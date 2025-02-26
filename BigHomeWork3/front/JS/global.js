@@ -19,4 +19,7 @@ export function initHeaderRight() {
         a_element.innerText = `Logout-${temptUser.username} ?`;
         headerRightElement.appendChild(a_element);
     }
+    else {
+        window.location.href = `${localhost}/bighomework3/front/pages/login.html`;
+    }
 }
