@@ -60,3 +60,13 @@ body{
 .double-letter-space{
     letter-spacing: 2em;
 }
+
+.page-switch{
+    visibility:hidden;
+}
+
+input[type="radio"]:checked + label{
+    background-color: var(--Secondary-Color1);
+    border-radius: 10px;
+    padding: 10px;
+}

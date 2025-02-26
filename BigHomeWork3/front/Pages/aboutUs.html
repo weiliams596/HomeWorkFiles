@@ -12,19 +12,24 @@
             logo
         </div>
         <div class="middle-items">
-            <a href="../../index.html">Home</a>
-            <a href="teachers.html">Teachers</a>
-            <a href="lessons.html">Lessons</a>
-            <a href="">About Us</a>
+            <input type="radio" class="page-switch" id="home" name="page-switch">
+            <label for="home">Home</label>
+            <input type="radio" class="page-switch" id="teachers" name="page-switch">
+            <label for="teachers">Teachers</label>
+            <input type="radio" class="page-switch" id="lessons" name="page-switch">
+            <label for="lessons">Lessons</label>
+            <input type="radio" class="page-switch" id="about" name="page-switch" checked>
+            <label for="about">About us</label>
         </div>
         <div class="right-items">
             <a href="login.html">Login</a>
             <a href="register.html">Register</a>
         </div>
     </header>
-    <h1>About Us</h1>
-    <p>We are a team of developers who are passionate about creating high-quality software. We are dedicated to providing the best possible solutions to our clients. We believe in the power of technology to transform businesses and make them more efficient and effective.</p>
-    
+    <main id="main">
+        <h1>About Us</h1>
+        <p>We are a team of developers who are passionate about creating high-quality software. We are dedicated to providing the best possible solutions to our clients. We believe in the power of technology to transform businesses and make them more efficient and effective.</p>    
+    </main>
     <script type="module" src="../JS/about.js"></script>
 </body>
 </html>
