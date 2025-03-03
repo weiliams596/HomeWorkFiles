@@ -1,5 +1,10 @@
 @import url('global.css');
 
+body{
+    justify-content: space-between;
+    height: 100vh;
+}
+
 .teacher-card{
     display: flex;
     flex-direction: column;

@@ -8,6 +8,23 @@
     --Accent-Color2:#FB8C00;
     --Text-Color1:#212121;
     --Text-Color2:#FFFFFF;
+
+
+    --dodger-blue:#1E90FF;
+    --light-blue:#ADD8E6;
+    --dark-blue:#00008B;
+    --sky-blue:#87CEEB;
+    --steel-blue:#4682B4;
+    --blue-grey:#6699CC;
+    --azure-blue:#007FFF;
+    --prussian-blue:#003153;
+    --navy-blue:#000080;
+
+    --light-grey:#D3D3D3;
+    --dark-grey:#A9A9A9;
+    --white-:#FFFFFF;
+
+    --gold-:#FFD700;
 }
 
 *{
@@ -28,9 +45,14 @@ html{
 body{
     font-size:calc(0.5em + 1vw);
     background-color: var(--Primary-Color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .header{
+    width: 100%;
     background-color:var(--Secondary-Color2);
     display: flex;
     justify-content: space-around;
@@ -43,7 +65,7 @@ body{
 }
 
 #main{
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,4 +91,14 @@ input[type="radio"]:checked + label{
     background-color: var(--Secondary-Color1);
     border-radius: 10px;
     padding: 10px;
+}
+
+#footer {
+    background-color: var(--Text-Color1);
+    color: var(--white-);
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

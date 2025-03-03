@@ -1,1 +1,76 @@
 @import url('global.css');
+
+.first-section {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.left-div {
+    border: 1px solid black;
+    width: 40%;
+    aspect-ratio: 1/1;
+    margin-right: 10px;
+}
+
+.right-div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    font-size: 2vw;
+}
+
+.other-lesson-card{
+    width: 100%;
+    display: flex;
+}
+
+.card-image{
+    width: 15%;
+    aspect-ratio: 1/1;
+}
+
+hr{
+    width: 100%;
+    margin:10px 0;
+}
+
+.lesson-card{
+    width: 10%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:10px;
+}
+
+.lesson-card img{
+    width: 60%;
+    aspect-ratio: 1/1;
+}
+
+.second-section{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+}
+
+.lesson-card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lesson-card img{
+    width: 40%;
+    aspect-ratio: 1/1;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+

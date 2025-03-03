@@ -60,7 +60,6 @@ export function clearAllUsers() {
 }
 
 
-
 export function isHaveTemptUser() {
     if (sessionStorage.getItem('user')) {
         return true;

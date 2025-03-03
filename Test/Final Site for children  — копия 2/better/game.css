@@ -1,0 +1,732 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0056b3;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav{
+    width: 80%;
+}
+
+.batyrmalar{
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.batyrmalar a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.batyrmalar a:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.logo{
+    width: 130px;
+    height: auto;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: #34496a;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #webgl {
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  #webgl2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 2;
+  }
+  
+  #bg-box {
+    width: 802px;
+    height: 602px;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .svg-box {
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    z-index: 1;
+  
+    #robot {
+      cursor: pointer;
+    }
+  }
+  
+
+
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+#play-btn {
+    background: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#play-btn:hover {
+    background: #0056b3;
+}
+
+
+.games-list {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.5s ease-in-out;
+    z-index: 20;
+}
+
+.games-list.hidden {
+    top: 150%; 
+}
+
+.game-card {
+    border: 2px solid #007BFF;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+  
+
+
+
+
+.game-container {
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+}
+
+.game-container h2 {
+    color: #0056b3;
+}
+
+.button-style {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-style:hover {
+    background-color: #004080;
+}
+
+
+.block-programming-game .blocks {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.block-programming-game .block {
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+.block-programming-game .workspace {
+    min-height: 100px;
+    border: 2px dashed #0056b3;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.block-programming-game .game-area {
+    position: relative;
+    height: 200px;
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+}
+
+.block-programming-game .character {
+    width: 50px;
+    height: 50px;
+    background-color: #0056b3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.maze-game .maze {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.maze-game .wall {
+    position: absolute;
+    background-color: #0056b3;
+}
+
+.maze-game .character {
+    width: 20px;
+    height: 20px;
+    background-color: #0056b3;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.maze-game .exit {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+
+
+.code-assembly-game .code-pieces {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.code-assembly-game .code-piece {
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+.code-assembly-game .code-workspace {
+    min-height: 100px;
+    border: 2px dashed #0056b3;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+.robot-game .grid {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.robot-game .robot {
+    width: 20px;
+    height: 20px;
+    background-color: #0056b3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.robot-game .target {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+
+
+.word-to-code-game .word {
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.word-to-code-game input {
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #0056b3;
+    border-radius: 5px;
+    margin-bottom: 20px;
+} */
+
+
+Жанартылган код 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* Header стильдері */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0056b3;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav {
+    width: 80%;
+}
+
+.batyrmalar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.batyrmalar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.batyrmalar a:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.logo {
+    width: 130px;
+    height: auto;
+}
+
+/* Body стильдері */
+body {
+    /* width: 100vw; */
+    height: 100vh;
+    margin: 0;
+    background: #34496a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#webgl {
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  #webgl2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 2;
+  }
+  
+  #bg-box {
+    width: 802px;
+    height: 602px;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .svg-box {
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    z-index: 1;
+  
+    #robot {
+      cursor: pointer;
+    }
+  }
+
+/* Play button стильдері */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10; /* Батырманы алдыңғы планға шығару */
+}
+
+#play-btn {
+    background: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#play-btn:hover {
+    background: #0056b3;
+}
+
+/* Ойындар тізімі стильдері */
+/* .games-list {
+    position: absolute;
+    top: 150%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.5s ease-in-out;
+    z-index: 20; 
+}
+
+.games-list.hidden {
+    top: 150%; 
+} */
+
+.games-list {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.games-list.show{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.game-container {
+    border: 2px solid #007BFF;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.game-container h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.game-container p {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.game-container button {
+    background: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.game-container button:hover {
+    background: #0056b3;
+}
+
+/* Блоктық бағдарламалау ойыны стильдері */
+.block-programming-game .blocks {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.block-programming-game .block {
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+.block-programming-game .workspace {
+    min-height: 100px;
+    border: 2px dashed #0056b3;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.block-programming-game .game-area {
+    position: relative;
+    height: 200px;
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+}
+
+.block-programming-game .character {
+    width: 50px;
+    height: 50px;
+    background-color: #0056b3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Лабиринт ойыны стильдері */
+.maze-game .maze {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.maze-game .wall {
+    position: absolute;
+    background-color: #0056b3;
+}
+
+.maze-game .character {
+    width: 20px;
+    height: 20px;
+    background-color: #0056b3;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.maze-game .exit {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+
+/* Кодты құрастыру ойыны стильдері */
+.code-assembly-game .code-pieces {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.code-assembly-game .code-piece {
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+.code-assembly-game .code-workspace {
+    min-height: 100px;
+    border: 2px dashed #0056b3;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Роботты басқару ойыны стильдері */
+.robot-game .grid {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.robot-game .robot {
+    width: 20px;
+    height: 20px;
+    background-color: #0056b3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.robot-game .target {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+
+/* Сөздерді кодқа айналдыру ойыны стильдері */
+.word-to-code-game .word {
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.word-to-code-game input {
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #0056b3;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+
+
+footer {
+    background-color: #0056b3;
+    color: #ecf0f1;
+    padding: 40px 0 20px;
+    font-family: Arial, sans-serif;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Футердің мазмұны */
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Әр бөлімнің стилі */
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+  }
+  
+  .footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #f1c40f;
+  }
+  
+  .footer-section p, .footer-section ul {
+    margin: 10px 0;
+  }
+  
+  .footer-section a {
+    color: #ecf0f1;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    color: #f1c40f;
+    text-decoration: underline;
+  }
+  
+  /* Әлеуметтік желілер мен сілтемелер тізімі */
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 10px 0;
+  }
+  
+  /* Карта */
+  .footer-section.map iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  /* Футердің төменгі бөлігі */
+  .footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1a252f;
+    margin-top: 20px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  /* Иконкалар */
+  .fas, .fab {
+    margin-right: 10px;
+  }

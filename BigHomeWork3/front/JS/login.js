@@ -32,6 +32,17 @@ formBtn.addEventListener('click', function (event) {
     const user = getUserByEmail(userName);
     if (user && user.password === password) {
       setTemptUser(user);
+      if (user.type === '1') {
+        setTimeout(() => {
+          window.location.href = 'http://localhost:5500/bighomework3/front/pages/teacher-lesson-controller.html';
+        }, 2000);
+        return;
+      }
+      else if(user.type==='0'){
+        setTimeout(() => {
+          window.location.href='http://localhost:5500/bighomework3/front/pages/AdminPage.html';
+        }, 2000);
+      }
       setTimeout(() => {
         window.location.href = 'http://localhost:5500/bighomework3/index.html';
       }, 2000);

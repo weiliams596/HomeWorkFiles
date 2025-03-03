@@ -1,2 +1,6 @@
 @import url('global.css');
 
+body{
+    height: 100vh;
+    justify-content: space-between;
+}

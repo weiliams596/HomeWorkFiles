@@ -79,6 +79,11 @@ registerForm.addEventListener('submit', (event) => {
         }, 2000);
         return;
     }
+    else if(userData.type === '1'){
+        setTimeout(() => {
+            window.location.href = 'http://localhost:5500/bighomework3/front/pages/teacher-lesson-controller.html';
+        }, 2000);
+    }
     setTimeout(() => {
         window.location.href = 'http://localhost:5500/bighomework3/index.html';
     }, 2000);
